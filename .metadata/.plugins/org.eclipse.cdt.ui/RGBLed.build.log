@@ -1,0 +1,16 @@
+14:20:39 **** Build of configuration Debug for project RGBLed ****
+make -j4 all 
+arm-none-eabi-gcc -o "RGBLed.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\NPEDU001\STM32CubeIDE\kyun\RGBLed\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RGBLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RGBLed.elf
+ 
+arm-none-eabi-size   RGBLed.elf 
+arm-none-eabi-objdump -h -S  RGBLed.elf  > "RGBLed.list"
+   text	   data	    bss	    dec	    hex	filename
+  16748	     28	   1644	  18420	   47f4	RGBLed.elf
+Finished building: default.size.stdout
+ 
+Finished building: RGBLed.list
+ 
+
+14:20:40 Build Finished. 0 errors, 0 warnings. (took 675ms)
+

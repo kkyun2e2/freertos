@@ -1,0 +1,10 @@
+14:20:44 **** Incremental Build of configuration Debug for project ssd1306 ****
+make -j4 all 
+arm-none-eabi-size   ssd1306.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17528	    128	   2712	  20368	   4f90	ssd1306.elf
+Finished building: default.size.stdout
+ 
+
+14:20:44 Build Finished. 0 errors, 0 warnings. (took 299ms)
+

@@ -1,0 +1,10 @@
+14:20:43 **** Build of configuration Debug for project freeRTOS ****
+make -j4 all 
+arm-none-eabi-size   freeRTOS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28312	    124	  21796	  50232	   c438	freeRTOS.elf
+Finished building: default.size.stdout
+ 
+
+14:20:43 Build Finished. 0 errors, 0 warnings. (took 393ms)
+

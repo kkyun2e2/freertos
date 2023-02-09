@@ -1,0 +1,42 @@
+14:20:40 **** Build of configuration Debug for project Temperture_ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:140:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  140 |     printf("%d %d %d\n",value,AvgFilter(value),(int)kalman((double)value));
+      |     ^~~~~~
+../Core/Src/main.c:140:5: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   25 | #include "filter.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:123:16: warning: unused variable 'down_cnt' [-Wunused-variable]
+  123 |     static int down_cnt=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:122:16: warning: unused variable 'up_cnt' [-Wunused-variable]
+  122 |     static int up_cnt=0;
+      |                ^~~~~~
+../Core/Src/main.c:121:9: warning: unused variable 'kalman_value' [-Wunused-variable]
+  121 |     int kalman_value = kalman((double)value);
+      |         ^~~~~~~~~~~~
+At top level:
+../Core/Src/main.c:122:16: warning: 'up_cnt' defined but not used [-Wunused-variable]
+  122 |     static int up_cnt=0;
+      |                ^~~~~~
+../Core/Src/main.c:123:16: warning: 'down_cnt' defined but not used [-Wunused-variable]
+  123 |     static int down_cnt=0;
+      |                ^~~~~~~~
+arm-none-eabi-gcc -o "Temperture_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\NPEDU001\STM32CubeIDE\kyun\Temperture_ADC\STM32F411RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Temperture_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Temperture_ADC.elf
+ 
+arm-none-eabi-size   Temperture_ADC.elf 
+arm-none-eabi-objdump -h -S  Temperture_ADC.elf  > "Temperture_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  22792	    160	   2264	  25216	   6280	Temperture_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Temperture_ADC.list
+ 
+
+14:20:42 Build Finished. 0 errors, 7 warnings. (took 1s.317ms)
+
